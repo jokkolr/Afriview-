@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AfriView – African Creator Platform</title>
+
+  <style>
+    /* Reset & Fonts */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #f0f4ff, #f9fafb);
+      color: #222;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: linear-gradient(to right, #4f46e5, #6366f1);
+      padding: 16px 20px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .navbar h1 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .navbar input {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 999px;
+      width: 55%;
+      outline: none;
+      font-size: 14px;
+    }
+
+    /* Filter Buttons */
+    .filters {
+      padding: 12px 20px;
+      background-color: #fff;
+      display: flex;
+      overflow-x: auto;
+      gap: 12px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .filters button {
+      padding: 8px 16px;
+      background: #eef2ff;
+      color: #4f46e5;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .filters button:hover {
+      background: #dbeafe;
+    }
+
+    /* Video Grid */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .video-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .video-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .info {
+      padding: 14px;
+    }
+
+    .info h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1f2937;
+      margin-bottom: 4px;
+    }
+
+    .info p {
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    /* Responsive */
+    @media (max-width: 500px) {
+      .navbar input {
+        width: 100px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <h1>AfriView</h1>
+    <input type="text" placeholder="Search...">
+  </div>
+
+  <!-- Filters -->
+  <div class="filters">
+    <button>News</button>
+    <button>Music</button>
+    <button>Faith</button>
+    <button>Skills</button>
+    <button>Comedy</button>
+    <button>Local Stories</button>
+  </div>
+
+  <!-- Video Grid -->
+  <div class="video-grid">
+    <!-- Video 1 -->
+    <div class="video-card">
+      <img src="https://via.placeholder.com/400x225" alt="Thumbnail">
+      <div class="info">
+        <h3>Inside Kisumu’s Tech Youth</h3>
+        <p>DevKenya · Kenya</p>
+      </div>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="video-card">
+      <img src="https://via.placeholder.com/400x225" alt="Thumbnail">
+      <div class="info">
+        <h3>Ghanaian Chef Cooks Local Dish</h3>
+        <p>ChefKojo · Ghana</p>
+      </div>
+    </div>
+
+    <!-- Video 3 -->
+    <div class="video-card">
+      <img src="https://via.placeholder.com/400x225" alt="Thumbnail">
+      <div class="info">
+        <h3>Nigerian Gospel Praise Night</h3>
+        <p>SoulVibe · Nigeria</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+  </html>
