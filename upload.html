@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Afriview - Upload Content</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0a3d2e, #0e6b50);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .upload-container {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 2rem 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 28px;
+      color: #f1f1f1;
+    }
+
+    input[type="file"] {
+      display: block;
+      margin: 1rem auto;
+      padding: 10px;
+      background: #fff;
+      border-radius: 10px;
+      border: none;
+      color: #333;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #10b981; /* emerald green */
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #059669;
+    }
+
+    .message {
+      margin-top: 1.5rem;
+      font-weight: bold;
+      color: #bbf7d0;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #bbf7d0;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="upload-container">
+    <div class="logo">Afriview</div>
+    <h2>Upload Your African Content</h2>
+    <form id="uploadForm" enctype="multipart/form-data">
+      <input type="file" name="content" required />
+      <button type="submit">Upload</button>
+    </form>
+    <div class="message" id="message"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById('uploadForm');
+    const message = document.getElementById('message');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      try {
+        const res = await fetch('http://localhost:5000/upload', {
+          method: 'POST',
+          body: formData
+        });
+        const data = await res.json();
+        if (data.success) {
+          message.textContent = "Uploaded successfully! Link: " + data.fileUrl;
+        } else {
+          message.textContent = "Upload failed.";
+        }
+      } catch (err) {
+        message.textContent = "Error uploading file.";
+      }
+    });
+  </script>
+</body>
+</html>
