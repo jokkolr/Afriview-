@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Signup - Afriview</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&family=Abel&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Abel', 'Ubuntu', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(rgba(0,128,55,0.8), rgba(0,128,55,0.8));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .signup-card {
+      background: #fff;
+      border: 2px solid #d97706;
+      border-radius: 20px;
+      padding: 2rem;
+      max-width: 450px;
+      width: 90%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      text-align: center;
+    }
+
+    .signup-card h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #2f2922;
+    }
+
+    .signup-card p {
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 0.9rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      border: 1px solid #c8a97e;
+      border-radius: 10px;
+      font-size: 1rem;
+      background-color: #f9f9f9;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.9rem;
+      background-color: #008037;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #005d28;
+    }
+
+    .login-link {
+      margin-top: 1rem;
+      color: #d97706;
+      font-size: 0.95rem;
+    }
+
+    .login-link a {
+      color: #d97706;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .logo {
+      font-size: 2rem;
+      color: #facc15;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="signup-card">
+    <div class="logo">Afriview 🌍</div>
+    <h2>Create your account</h2>
+    <form action="/auth/signup" method="POST">
+      <input type="text" name="username" placeholder="Username" required />
+      <input type="email" name="email" placeholder="Email address" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <button type="submit">Sign Up</button>
+    </form>
+    <div class="login-link">
+      Already have an account? <a href="/views/login.html">Login</a>
+    </div>
+  </div>
+</body>
+</html>
